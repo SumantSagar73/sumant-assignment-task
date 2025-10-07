@@ -1,6 +1,6 @@
 # 🛒 MERN E-Commerce with Stripe Integration
 
-A full-stack e-commerce application built with MongoDB, Express, React, and Node.js (MERN), featuring Stripe payment integration and webhook handling.
+A full-stack e-commerce application built with MongoDB, Express, React, and Node.js (MERN), featuring Stripe payment integration, webhook handling, and complete order management.
 
 ## ✨ Features
 
@@ -35,6 +35,18 @@ A full-stack e-commerce application built with MongoDB, Express, React, and Node
 - Payment status tracking (pending/success/failed)
 - Order persistence in database
 
+### Phase 6: Payment Status Pages ✅
+- Success page with confirmation message
+- Cancel/failure page with return options
+- Clear user feedback after payment
+
+### Phase 7: Documentation & Finalization ✅
+- Complete README documentation
+- .env.example template
+- Testing guide
+- Quick start guide
+- Project summary
+
 ## 🚀 Tech Stack
 
 **Frontend:**
@@ -42,13 +54,22 @@ A full-stack e-commerce application built with MongoDB, Express, React, and Node
 - React Router DOM
 - Axios
 - Context API for state management
+- CSS-in-JS (inline styles)
 
 **Backend:**
 - Node.js
 - Express.js
 - MongoDB with Mongoose
-- Stripe SDK
+- Stripe SDK v19
 - Dotenv for environment variables
+- CORS middleware
+
+**Database:**
+- MongoDB Atlas (Cloud Database)
+
+**Payment Processing:**
+- Stripe Checkout
+- Stripe Webhooks
 
 ## 📁 Project Structure
 
@@ -98,23 +119,85 @@ STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret
 CLIENT_URL=http://localhost:3001
 ```
 
-## 📦 Installation
+### How to Get Your Keys:
 
-### Backend Setup
+1. **MongoDB Atlas URI:**
+   - Create account at https://www.mongodb.com/cloud/atlas
+   - Create a cluster
+   - Click "Connect" → "Connect your application"
+   - Copy connection string
+   - Replace `<password>` with your database user password
+   - **Note:** URL-encode special characters (e.g., `@` becomes `%40`)
+
+2. **Stripe Keys:**
+   - Create account at https://stripe.com
+   - Go to Developers → API Keys
+   - Copy "Secret key" (starts with `sk_test_`)
+   - Copy "Publishable key" (starts with `pk_test_`)
+
+3. **Stripe Webhook Secret:**
+   - For local testing: Use Stripe CLI (see below)
+   - For production: Stripe Dashboard → Webhooks → Add endpoint
+
+## 📦 Installation & Setup
+
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
+- MongoDB Atlas account
+- Stripe account
+
+### Step-by-Step Installation
+
+#### 1. Clone the Repository
+```bash
+git clone <your-repo-url>
+cd sumant-assignment-task
+```
+
+#### 2. Backend Setup
 
 ```bash
+# Navigate to server directory
 cd server
+
+# Install dependencies
 npm install
+
+# Create .env file
+cp .env.example .env
+
+# Edit .env with your credentials
+# (Use notepad, vim, or any text editor)
+
+# Start the server
 npm run dev
 ```
 
-### Frontend Setup
+The server will start on http://localhost:5000
+
+#### 3. Frontend Setup
+
+Open a new terminal:
 
 ```bash
+# Navigate to client directory
 cd client
+
+# Install dependencies
 npm install
+
+# Start the React app
 npm start
 ```
+
+The app will open on http://localhost:3001
+
+### Verify Installation
+
+1. **Backend:** Visit http://localhost:5000 - should see `{"message":"Server is running"}`
+2. **Frontend:** Visit http://localhost:3001 - should see product listing
+3. **MongoDB:** Check server console for "MongoDB connected"
 
 ## 🔧 API Endpoints
 
