@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import axiosInstance from '../utils/axios';
 import { FaShoppingBag, FaTrashAlt, FaPlus, FaMinus } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import './CartPage.css';
 
 const CartPage = () => {
   const { cart, addToCart, removeFromCart, clearCart, totalPrice } = useCart();
@@ -48,75 +50,75 @@ const CartPage = () => {
 
   if (cart.length === 0) {
     return (
-      <div style={styles.container}>
-        <div style={styles.emptyCart}>
-          <FaShoppingBag style={styles.emptyIcon} />
-          <h1 style={styles.emptyTitle}>Your Cart is Empty</h1>
-          <p style={styles.emptySubtitle}>Add some items to get started</p>
-          <a href="/" style={styles.shopBtn}>Continue Shopping</a>
+      <div className="cart-container">
+        <div className="cart-emptyCart">
+          <FaShoppingBag className="cart-emptyIcon" />
+          <h1 className="cart-emptyTitle">Your Cart is Empty</h1>
+          <p className="cart-emptySubtitle">Add some items to get started</p>
+          <a href="/" className="cart-shopBtn">Continue Shopping</a>
         </div>
       </div>
     );
   }
 
   return (
-    <div style={styles.container}>
-      <h1 style={styles.title}>Shopping Cart</h1>
-      <div style={styles.cartContent}>
+    <div className="cart-container">
+      <h1 className="cart-title">Shopping Cart</h1>
+      <div className="cart-cartContent">
         {cart.map((item) => (
-          <div key={item.id} style={styles.cartItem}>
-            <div style={styles.imageWrapper}>
-              <img src={item.image} alt={item.name} style={styles.image} />
+          <div key={item.id" className="cart-cartItem}>
+            <div className="cart-imageWrapper">
+              <img src={item.image" alt={item.name} className="cart-image} />
             </div>
-            <div style={styles.itemDetails}>
-              <h3 style={styles.itemName}>{item.name}</h3>
-              <p style={styles.price}>₹{item.price}</p>
+            <div className="cart-itemDetails">
+              <h3 className="cart-itemName">{item.name"</h3>
+              <p className="cart-price">₹{item.price"</p>
             </div>
-            <div style={styles.quantityControl}>
+            <div className="cart-quantityControl">
               <button 
                 onClick={() => removeFromCart(item.id)} 
-                style={styles.quantityBtn}
+                className="cart-quantityBtn}
               >
                 <FaMinus />
               </button>
-              <span style={styles.quantity}>{item.quantity}</span>
+              <span className="cart-quantity">{item.quantity"</span>
               <button 
                 onClick={() => addToCart(item)} 
-                style={styles.quantityBtn}
+                className="cart-quantityBtn}
               >
                 <FaPlus />
               </button>
             </div>
-            <div style={styles.itemTotal}>
+            <div className="cart-itemTotal">
               ₹{item.price * item.quantity}
             </div>
           </div>
         ))}
       </div>
 
-      <div style={styles.checkoutSection}>
-        <div style={styles.totalSection}>
-          <h2 style={styles.totalText}>Total: <span style={styles.totalAmount}>₹{totalPrice}</span></h2>
+      <div className="cart-checkoutSection">
+        <div className="cart-totalSection">
+          <h2 className="cart-totalText">Total: <span className="cart-totalAmount">₹{totalPrice"</span></h2>
         </div>
         
-        <div style={styles.emailSection}>
-          <label htmlFor="email" style={styles.label}>Email Address</label>
+        <div className="cart-emailSection">
+          <label htmlFor="email" className="cart-label">Email Address</label>
           <input
             type="email"
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="your.email@example.com"
-            style={styles.input}
+            className="cart-input}
             required
           />
         </div>
 
-        {error && <div style={styles.error}>{error}</div>}
+        {error && <div className="cart-error">{error"</div>}
 
         <button 
           onClick={handleCheckout} 
-          style={styles.checkoutBtn}
+          className="cart-checkoutBtn}
           disabled={loading}
         >
           {loading ? 'Processing...' : 'Proceed to Checkout'}
@@ -124,9 +126,9 @@ const CartPage = () => {
 
         <button 
           onClick={clearCart} 
-          style={styles.clearBtn}
+          className="cart-clearBtn}
         >
-          <FaTrashAlt style={{ marginRight: '8px' }} />
+          <FaTrashAlt style={{ marginRight: '8px' "} />
           Clear Cart
         </button>
       </div>
