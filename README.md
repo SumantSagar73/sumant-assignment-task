@@ -126,7 +126,6 @@ This project demonstrates a complete e-commerce checkout flow where users can br
 - Run commands documented
 
 ✅ **22. Video Demonstration**
-- Video demo script prepared (VIDEO_DEMO_SCRIPT.md)
 - Shows complete functionality
 - Code walkthrough included
 
@@ -491,24 +490,6 @@ Use these test card numbers in Stripe Checkout:
   - Verify CORS is enabled in `server.js`
   - Check axios baseURL in `client/src/utils/axios.js`
 
-## 📚 Additional Documentation
-
-- **QUICKSTART.md** - Quick setup guide
-- **TESTING.md** - Detailed testing instructions
-- **DEPLOYMENT.md** - Production deployment guide
-- **VIDEO_DEMO_SCRIPT.md** - Video demonstration script
-- **PROJECT_SUMMARY.md** - Complete project overview
-
-## 🎥 Video Demonstration
-
-A video demonstration is available showing:
-- Complete codebase walkthrough
-- Application functionality
-- Stripe payment flow
-- Order management
-- Webhook handling
-
-(See VIDEO_DEMO_SCRIPT.md for the full script)
 
 ## 📋 Assignment Requirements Checklist
 
