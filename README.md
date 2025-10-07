@@ -219,6 +219,12 @@ STRIPE_PUBLISHABLE_KEY=pk_test_your_stripe_publishable_key
 STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret
 CLIENT_URL=http://localhost:3001
 ```
+### My API Keys:
+   - MONGO_URI=mongodb+srv://6073sumant_db_user:Pass%40123@cluster0.htkylrt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+   - STRIPE_SECRET_KEY=sk_test_51SFTKwDuk5R8mNeetzGR73LLj4n37tOFgfkIKxjbGmimcy5eZmqSQflcMcepEen7Mf8wlG7Dfid62Jz6WwL3h2MX00eLNAMd4x
+   - STRIPE_PUBLISHABLE_KEY=pk_test_51SFTKwDuk5R8mNeeikCi1OUZK0OkkiKdgKptB5vwBItSyViAlRxJn2ictJ43ID0VzIGdKaSgDF6gV6wTHCeLCgUT001k1mzoEH
+   - STRIPE_WEBHOOK_SECRET=whsec_test_webhook_sumantProduct
+   - CLIENT_URL=http://localhost:3000
 
 ### How to Get Your Keys:
 
