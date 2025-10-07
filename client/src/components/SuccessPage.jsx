@@ -27,7 +27,7 @@ const SuccessPage = () => {
           onClick={() => navigate('/')} 
           className="success-button"
         >
-          <FaShoppingBag style={{ marginRight: '10px' }} />
+          <FaShoppingBag />
           Continue Shopping
         </button>
       </div>

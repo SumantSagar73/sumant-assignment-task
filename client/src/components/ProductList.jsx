@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { products } from '../mockData';
 import { useCart } from '../context/CartContext';
+import Toast from './Toast';
 import './ProductList.css';
 
 const ProductList = () => {
   const { addToCart } = useCart();
+  const [toast, setToast] = useState(null);
+
+  const handleAddToCart = (product) => {
+    addToCart(product);
+    setToast(`${product.name} added to cart!`);
+  };
 
   return (
     <div className="product-list-container">
+      {toast && <Toast message={toast} onClose={() => setToast(null)} />}
       <div className="product-list-header">
         <h1 className="product-list-title">Products</h1>
       </div>
@@ -19,7 +27,7 @@ const ProductList = () => {
               <h3 className="product-name">{product.name}</h3>
               <p className="product-price">₹{product.price}</p>
               <button 
-                onClick={() => addToCart(product)} 
+                onClick={() => handleAddToCart(product)} 
                 className="product-add-button"
               >
                 Add to Cart

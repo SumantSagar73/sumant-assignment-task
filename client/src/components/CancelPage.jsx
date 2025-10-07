@@ -21,14 +21,14 @@ const CancelPage = () => {
             onClick={() => navigate('/cart')} 
             className="cancel-primary-button"
           >
-            <FaShoppingCart style={{ marginRight: '10px' }} />
+            <FaShoppingCart />
             Back to Cart
           </button>
           <button 
             onClick={() => navigate('/')} 
             className="cancel-secondary-button"
           >
-            <FaHome style={{ marginRight: '10px' }} />
+            <FaHome />
             Browse More
           </button>
         </div>
