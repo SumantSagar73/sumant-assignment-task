@@ -1,151 +1,151 @@
-# 🛒 E-Commerce Checkout with Stripe Integration
+# E-Commerce Checkout with Stripe Integration
 
 A full-stack e-commerce application built with the MERN stack (MongoDB, Express.js, React, Node.js) featuring Stripe payment integration, order management, and webhook handling.
 
-## 📋 Assignment Overview
+## Assignment Overview
 
 **Task:** Implement a simple checkout system with Stripe payment integration.
 
 This project demonstrates a complete e-commerce checkout flow where users can browse products, add items to cart, and make payments securely using Stripe's API. The application includes order tracking, payment status management, and webhook integration for real-time payment updates.
 
-## ✨ Features Implemented
+## Features Implemented
 
 ### Application Features (Requirements 1-11)
 
-✅ **1. E-Commerce Web Interface**
+ **1. E-Commerce Web Interface**
 - Clean, professional dark theme design
 - Intuitive navigation with cart icon
 - Responsive product grid layout
 
-✅ **2. Mock Product Data**
+ **2. Mock Product Data**
 - 12 products with real images from Unsplash
 - Product details include name, price, and high-quality images
 - One free sample product for testing
 
-✅ **3. Product Listing with Add to Cart**
+ **3. Product Listing with Add to Cart**
 - Grid display of products
 - "Add to Cart" button on each product card
 - Clean card design with product images
 
-✅ **4. Cart Icon with Item Count**
+ **4. Cart Icon with Item Count**
 - Navbar cart icon with badge
 - Real-time count of items in cart
 - Visual feedback on cart updates
 
-✅ **5. Cart View & Checkout Navigation**
+**5. Cart View & Checkout Navigation**
 - Clickable cart icon to view selected items
 - Quantity adjustment controls (+/-)
 - Remove items functionality
 - Proceed to checkout button
 
-✅ **6. Checkout Page with Payment Fields**
+**6. Checkout Page with Payment Fields**
 - Email input field (required)
 - Stripe-hosted payment form
 - Clean checkout interface
 
-✅ **7. Mandatory Email Validation**
+ **7. Mandatory Email Validation**
 - Email required before checkout
 - Client-side email format validation
 - Error messages for invalid inputs
 
-✅ **8. Stripe Checkout Redirect**
+ **8. Stripe Checkout Redirect**
 - Seamless redirect to Stripe payment page
 - Secure payment processing
 - Session-based checkout
 
-✅ **9. Payment Status Redirect**
+ **9. Payment Status Redirect**
 - Success page after successful payment
 - Cancel/failure page for declined payments
 - Clear user feedback on payment status
 
-✅ **10. Payment Success Confirmation**
+ **10. Payment Success Confirmation**
 - "Payment Successful" message
 - Order confirmation details
 - Continue shopping option
 
-✅ **11. Payment Failure Message**
+ **11. Payment Failure Message**
 - "Payment Cancelled" notification
 - Return to cart option
 - Browse more products option
 
 ### Backend Requirements (Requirements 12-15)
 
-✅ **12. Orders Database**
+ **12. Orders Database**
 - MongoDB database for order tracking
 - Complete transaction history
 - Order schema with all required fields
 
-✅ **13. Successful Payment Order Storage**
+ **13. Successful Payment Order Storage**
 - Order details saved on payment success
 - Includes: items, total, payment status, transaction ID, customer email
 - Stripe Payment Intent ID stored as transaction ID
 
-✅ **14. Failed Payment Order Storage**
+ **14. Failed Payment Order Storage**
 - Failed orders tracked in database
 - Same data structure as successful orders
 - Payment status marked as "failed"
 
-✅ **15. Webhook Order Status Updates**
+ **15. Webhook Order Status Updates**
 - Stripe webhook endpoint configured
 - Real-time order status updates
 - Handles checkout.session.completed events
 
 ### Code Quality (Requirements 16-20)
 
-✅ **16. Focused Implementation**
+ **16. Focused Implementation**
 - All specified requirements met
 - No unnecessary features added
 - Clean, minimal codebase
 
-✅ **17. Coding Standards**
+ **17. Coding Standards**
 - Consistent naming conventions
 - ES6+ JavaScript syntax
 - Proper indentation and formatting
 
-✅ **18. Modular Code Structure**
+ **18. Modular Code Structure**
 - Reusable React components
 - Separate route handlers
 - Context API for state management
 - Utility functions isolated
 
-✅ **19. Code Documentation**
+ **19. Code Documentation**
 - Inline comments for complex logic
 - Clear function and variable names
 - JSDoc-style comments where needed
 
-✅ **20. Proper Source Code Structure**
+ **20. Proper Source Code Structure**
 - Clear separation: frontend/backend
 - Organized folder structure
 - Logical component hierarchy
 
 ### Documentation & Deliverables (Requirements 21-25)
 
-✅ **21. README Documentation**
+ **21. README Documentation**
 - Setup instructions included
 - Environment variable configuration
 - Run commands documented
 
-✅ **22. Video Demonstration**
+ **22. Video Demonstration**
 - Shows complete functionality
 - Code walkthrough included
 
-✅ **23. Environment Files**
+ **23. Environment Files**
 - .env.example provided
 - All required variables documented
 - Secure credential handling
 
-✅ **24. GitHub Repository**
+ **24. GitHub Repository**
 - Single repository with organized structure
 - Frontend in `/client` folder
 - Backend in `/server` folder
 - Clear categorization
 
-✅ **25. Working Application**
+ **25. Working Application**
 - Tested and fully functional
 - Easy setup process
 - All dependencies documented
 
-## 🚀 Tech Stack
+## Tech Stack
 
 **Frontend:**
 - React 18.3.1
@@ -169,7 +169,7 @@ This project demonstrates a complete e-commerce checkout flow where users can br
 - Stripe Checkout
 - Stripe Webhooks
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 sumant-assignment-task/
@@ -207,7 +207,7 @@ sumant-assignment-task/
     └── package.json
 ```
 
-## ⚙️ Environment Variables
+## Environment Variables
 
 Create a `.env` file in the `server` directory:
 
@@ -246,7 +246,7 @@ CLIENT_URL=http://localhost:3001
    - For local testing: Use Stripe CLI (see "Webhook Setup" section below)
    - For production: Stripe Dashboard → Webhooks → Add endpoint
 
-## 📦 Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 - Node.js (v14 or higher)
@@ -416,7 +416,7 @@ Use these test card numbers in Stripe Checkout:
 }
 ```
 
-## 🌐 Application Flow
+## Application Flow
 
 1. **Product Browsing**
    - User views 12 products on homepage
@@ -454,7 +454,7 @@ Use these test card numbers in Stripe Checkout:
    - User redirected to success/cancel page
    - Appropriate message displayed
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### MongoDB Connection Issues
 - **Error:** "MongoNetworkError" or "Authentication failed"
@@ -497,7 +497,7 @@ Use these test card numbers in Stripe Checkout:
   - Check axios baseURL in `client/src/utils/axios.js`
 
 
-## 📋 Assignment Requirements Checklist
+## Assignment Requirements Checklist
 
 All 25 requirements from the task assignment have been implemented:
 
@@ -506,7 +506,7 @@ All 25 requirements from the task assignment have been implemented:
 ✅ **Requirements 16-20:** Code Quality  
 ✅ **Requirements 21-25:** Documentation & Deliverables  
 
-## 🔒 Security Notes
+## Security Notes
 
 - Never commit `.env` file to Git
 - Use environment variables for all sensitive data
@@ -515,7 +515,7 @@ All 25 requirements from the task assignment have been implemented:
 - Input validation on email field
 - MongoDB connection uses secure credentials
 
-## 🚀 Future Enhancements
+## Future Enhancements
 
 Potential improvements for production:
 - User authentication and login
@@ -527,17 +527,17 @@ Potential improvements for production:
 - Inventory management
 - Shipping address collection
 
-## 📄 License
+## License
 
 This project is created for assignment purposes.
 
-## 👨‍💻 Author
+## Author
 
 **Sumant Sagar**
 - GitHub: [@SumantSagar73](https://github.com/SumantSagar73)
 - Repository: [sumant-assignment-task](https://github.com/SumantSagar73/sumant-assignment-task)
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Stripe for payment processing
 - MongoDB Atlas for database hosting
@@ -558,11 +558,11 @@ This project is created for assignment purposes.
 - Ensure `CLIENT_URL` in `.env` matches your frontend URL
 - Check CORS middleware is properly configured
 
-## 📝 License
+## Additional License Information
 
 MIT
 
-## 👨‍💻 Author
+## Additional Author Information
 
 Sumant - MERN Stack Developer
 
