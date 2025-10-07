@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import axiosInstance from '../utils/axios';
 import { FaShoppingBag, FaTrashAlt, FaPlus, FaMinus } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
 import './CartPage.css';
 
 const CartPage = () => {
