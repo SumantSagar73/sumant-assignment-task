@@ -299,7 +299,7 @@ npm install
 npm start
 ```
 
-The app will open on http://localhost:3001
+The app will open on http://localhost:3000
 
 #### 4. Webhook Setup (Optional but Recommended)
 
@@ -327,32 +327,11 @@ stripe listen --forward-to localhost:5000/api/webhook/webhook
 ### Verify Installation
 
 1. **Backend:** Visit http://localhost:5000 - should see `{"message":"Server is running"}`
-2. **Frontend:** Visit http://localhost:3001 - should see product listing
+2. **Frontend:** Visit http://localhost:3000 - should see product listing
 3. **MongoDB:** Check server console for "MongoDB connected successfully"
 
-## 🔧 API Endpoints
 
-### Checkout Routes
-- **POST** `/api/checkout/create-checkout-session`
-  - Creates Stripe checkout session
-  - Body: `{ cartItems: [], email: "user@example.com" }`
-  - Returns: `{ url: "stripe_checkout_url", orderId: "order_id" }`
-
-### Webhook Routes
-- **POST** `/api/webhook/webhook`
-  - Stripe webhook endpoint
-  - Handles events: `checkout.session.completed`, `payment_intent.payment_failed`
-  - Updates order status in database
-
-- **GET** `/api/webhook/order/:sessionId`
-  - Retrieve order by Stripe session ID
-  - Returns: Order details
-
-- **GET** `/api/webhook/orders`
-  - Get all orders (for testing/admin)
-  - Returns: Array of all orders
-
-## 🎯 Stripe Webhook Events Handled
+##  Stripe Webhook Events Handled
 
 1. **checkout.session.completed**
    - Updates order status to `success`
@@ -367,7 +346,7 @@ stripe listen --forward-to localhost:5000/api/webhook/webhook
    - Updates order status to `failed`
    - Triggered when async payment fails
 
-## 🧪 Testing the Application
+##  Testing the Application
 
 ### Test Stripe Payments
 
@@ -384,17 +363,17 @@ Use these test card numbers in Stripe Checkout:
 
 ### Complete Testing Flow
 
-1. ✅ Browse products on homepage
-2. ✅ Add multiple products to cart
-3. ✅ View cart and adjust quantities
-4. ✅ Enter email address
-5. ✅ Click "Proceed to Checkout"
-6. ✅ Complete Stripe payment with test card
-7. ✅ Verify success/cancel page redirect
-8. ✅ Check MongoDB for order entry
-9. ✅ Verify order status updates (if webhooks configured)
+1.  Browse products on homepage
+2.  Add multiple products to cart
+3.  View cart and adjust quantities
+4.  Enter email address
+5.  Click "Proceed to Checkout"
+6.  Complete Stripe payment with test card
+7.  Verify success/cancel page redirect
+8.  Check MongoDB for order entry
+9. Verify order status updates (if webhooks configured)
 
-## 🗃️ Database Schema
+##  Database Schema
 
 ### Order Model
 ```javascript
@@ -497,36 +476,6 @@ Use these test card numbers in Stripe Checkout:
   - Check axios baseURL in `client/src/utils/axios.js`
 
 
-## Assignment Requirements Checklist
-
-All 25 requirements from the task assignment have been implemented:
-
-✅ **Requirements 1-11:** Application Features  
-✅ **Requirements 12-15:** Backend & Database  
-✅ **Requirements 16-20:** Code Quality  
-✅ **Requirements 21-25:** Documentation & Deliverables  
-
-## Security Notes
-
-- Never commit `.env` file to Git
-- Use environment variables for all sensitive data
-- Stripe webhook signature verification enabled
-- CORS configured for specific client URL
-- Input validation on email field
-- MongoDB connection uses secure credentials
-
-## Future Enhancements
-
-Potential improvements for production:
-- User authentication and login
-- Product management admin panel
-- Order history for customers
-- Email notifications for orders
-- Product search and filters
-- Multiple payment methods
-- Inventory management
-- Shipping address collection
-
 ## License
 
 This project is created for assignment purposes.
@@ -558,14 +507,5 @@ This project is created for assignment purposes.
 - Ensure `CLIENT_URL` in `.env` matches your frontend URL
 - Check CORS middleware is properly configured
 
-## Additional License Information
-
-MIT
-
-## Additional Author Information
-
-Sumant - MERN Stack Developer
-
----
 
 **Happy Coding! 🚀**
