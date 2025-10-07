@@ -6,6 +6,16 @@ import './CancelPage.css';
 const CancelPage = () => {
   const navigate = useNavigate();
 
+  const handleBackToCart = () => {
+    window.scrollTo(0, 0);
+    navigate('/cart', { replace: true });
+  };
+
+  const handleBrowseMore = () => {
+    window.scrollTo(0, 0);
+    navigate('/', { replace: true });
+  };
+
   return (
     <div className="cancel-container">
       <div className="cancel-card">
@@ -18,14 +28,14 @@ const CancelPage = () => {
         
         <div className="cancel-button-group">
           <button 
-            onClick={() => navigate('/cart')} 
+            onClick={handleBackToCart} 
             className="cancel-primary-button"
           >
             <FaShoppingCart />
             Back to Cart
           </button>
           <button 
-            onClick={() => navigate('/')} 
+            onClick={handleBrowseMore} 
             className="cancel-secondary-button"
           >
             <FaHome />

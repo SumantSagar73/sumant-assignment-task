@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { FaCheckCircle, FaShoppingBag } from 'react-icons/fa';
@@ -7,11 +7,20 @@ import './SuccessPage.css';
 const SuccessPage = () => {
   const navigate = useNavigate();
   const { clearCart } = useCart();
+  const hasCleared = useRef(false);
 
   useEffect(() => {
-    // Clear cart on successful payment
-    clearCart();
-  }, [clearCart]);
+    // Clear cart only once on mount
+    if (!hasCleared.current) {
+      clearCart();
+      hasCleared.current = true;
+    }
+  }, []);
+
+  const handleContinueShopping = () => {
+    navigate('/', { replace: true });
+    window.scrollTo(0, 0);
+  };
 
   return (
     <div className="success-container">
@@ -24,7 +33,7 @@ const SuccessPage = () => {
         <p className="success-submessage">You will receive a confirmation email shortly</p>
         
         <button 
-          onClick={() => navigate('/')} 
+          onClick={handleContinueShopping} 
           className="success-button"
         >
           <FaShoppingBag />
